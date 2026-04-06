@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#!/bin/bash
+
+if [ $# -lt 4 ]; then
+    echo "Uso: ./deploy.sh <accion> <instance_id> <directorio> <bucket>"
+    exit 1
+fi
+
 ACCION=$1
 INSTANCE_ID=$2
 DIRECTORIO=$3
