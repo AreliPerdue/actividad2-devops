@@ -15,6 +15,8 @@ if len(sys.argv) > 2:
         iniciar_instancia(sys.argv[2])
     elif sys.argv[1] == "stop":
         detener_instancia(sys.argv[2])
+    elif sys.argv[1] == "terminate":
+        terminar_instancia(sys.argv[2])
     else:
         listar_instancias()
 else:
@@ -28,3 +30,7 @@ def detener_instancia(instance_id):
     ec2 = boto3.client('ec2')
     ec2.stop_instances(InstanceIds=[instance_id])
     print(f"Deteniendo instancia {instance_id}")
+def terminar_instancia(instance_id):
+    ec2 = boto3.client('ec2')
+    ec2.terminate_instances(InstanceIds=[instance_id])
+    print(f"Terminando instancia {instance_id}")
