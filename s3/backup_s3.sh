@@ -1,3 +1,7 @@
 #!/bin/bash
 
-echo "Script de respaldo en S3"
+DIRECTORIO=$1
+BUCKET=$2
+
+echo "Directorio: $DIRECTORIO"
+echo "Bucket: $BUCKET"
